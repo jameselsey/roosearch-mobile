@@ -27,3 +27,6 @@ proguard/
 *.ipr
 *.iws
 .idea/
+
+target/
+cached-robolectric-classes.jar

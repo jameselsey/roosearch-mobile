@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.roosearch</groupId>
+    <artifactId>roosearch-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>roosearch - Parent</name>
+
+    <modules>
+        <module>roosearch</module>
+        <module>roosearch-it</module>
+    </modules>
+
+    <properties>
+        <platform.version>2.3.3</platform.version>
+        <platform.platform>10</platform.platform>
+
+        <jayway-maven-android.version>3.5.0</jayway-maven-android.version>
+        <robotium-solo.version>3.6</robotium-solo.version>
+        <spring-android.version>1.0.1.RELEASE</spring-android.version>
+        <jackson.version>1.9.11</jackson.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android</artifactId>
+                <version>${platform.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!--<dependency>-->
+                <!--<groupId>android</groupId>-->
+                <!--<artifactId>android</artifactId>-->
+                <!--<version>4.0_r3</version>-->
+                <!--<scope>provided</scope>-->
+            <!--</dependency>-->
+
+
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android-test</artifactId>
+                <version>${platform.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Androlog is a logging and reporting library for Android -->
+            <dependency>
+                <groupId>de.akquinet.android.androlog</groupId>
+                <artifactId>androlog</artifactId>
+                <version>1.0.5</version>
+            </dependency>
+
+
+            <!-- Testing dependencies -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.10</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.robolectric</groupId>
+                <artifactId>robolectric</artifactId>
+                <version>2.0-alpha-1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup</groupId>
+                <artifactId>fest-android</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jayway.android.robotium</groupId>
+                <artifactId>robotium-solo</artifactId>
+                <version>${robotium-solo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.android</groupId>
+                <artifactId>spring-android-rest-template</artifactId>
+                <version>${spring-android.version}</version>
+            </dependency>
+
+            <dependency>
+                <!-- Using Jackson for JSON marshaling -->
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>${jayway-maven-android.version}</version>
+                    <configuration>
+                        <emulator>
+                            <avd>2.3.3</avd>
+                            <!-- Wait for emulator starting (3 minutes) -->
+                            <wait>180000</wait>
+                            <options>-no-skin</options>
+                        </emulator>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

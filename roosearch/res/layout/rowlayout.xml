@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:background="@drawable/panel" android:layout_margin="3dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:text="New Text"
+                android:id="@+id/surveyName"
+
+                android:textSize="35dp" android:textStyle="normal" android:background="@android:color/transparent"
+                android:layout_alignParentLeft="true" android:layout_alignParentBottom="false"
+                android:layout_centerVertical="true" android:layout_marginLeft="5dp"
+                android:textColor="@color/dark_text_color"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView" android:src="@drawable/surveyicon" android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp" android:padding="5dp"/>
+    </RelativeLayout>
+</RelativeLayout>

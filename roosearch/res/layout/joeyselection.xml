@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/radialbackground">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:background="@drawable/panel" android:padding="5dp"
+            android:layout_margin="3dp">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/imageView" android:src="@drawable/kangaroo" android:layout_weight="1"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Roo name!"
+                    android:id="@+id/rooName" android:layout_gravity="center" android:textSize="20dp"
+                    android:typeface="serif"
+                    android:textStyle="bold" android:gravity="center_horizontal" android:layout_weight="1"
+                    android:textColor="@color/dark_text_color"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Facebook"
+                    android:id="@+id/facebook" android:layout_weight="1" android:onClick="facebookClicked"
+                    android:background="@drawable/button" style="@style/ButtonText" android:singleLine="true"
+                    android:layout_margin="5dp"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Twitter"
+                    android:id="@+id/twitter" android:layout_weight="1" android:onClick="twitterClicked"
+                    android:background="@drawable/button" style="@style/ButtonText" android:layout_margin="5dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ListView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/listView" android:layout_above="@+id/button"/>
+    </RelativeLayout>
+</LinearLayout>

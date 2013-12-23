@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_text_color">#48802c</color>
+    <color name="lime_green">#abbf78</color>
+    <color name="dark_grey">#666666</color>
+    <color name="pale_grey">#efefef</color>
+    <color name="background_gradient_start">#abbf78</color>
+    <color name="background_gradient_center">#abbf78</color>
+    <color name="background_gradient_end">#abbf78</color>
+</resources>

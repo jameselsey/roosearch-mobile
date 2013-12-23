@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/radialbackground">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:layout_centerVertical="true">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:id="@+id/imageView" android:layout_gravity="center" android:src="@drawable/roosearchlogo"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan a QR code"
+                android:id="@+id/button" android:layout_gravity="center"
+                android:onClick="scanBarCode"
+                android:background="@drawable/button" style="@style/ButtonText"
+                android:layout_margin="15dp"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="------ OR ------"
+                android:id="@+id/textView" android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal" android:textColor="@color/dark_text_color"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/findRooById" android:layout_gravity="center" android:focusableInTouchMode="true"
+                    android:enabled="true" android:hint="Enter customer Id here"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Find a Roo!"
+                    android:id="@+id/findRooButton" android:onClick="findRoo"
+                    android:background="@drawable/button" style="@style/ButtonText"
+                    android:layout_margin="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
