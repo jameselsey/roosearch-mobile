@@ -15,7 +15,6 @@ public class RestDataProvider implements DataProvider {
             final String url = "http://roosearchdev.jameselsey.cloudbees.net/api/customer/{query}";
 
             HttpHeaders requestHeaders = new HttpHeaders();
-            requestHeaders.setAcceptEncoding(ContentCodingType.GZIP);
 
             // Create a new RestTemplate instance
             RestTemplate restTemplate = new RestTemplate();
@@ -27,7 +26,7 @@ public class RestDataProvider implements DataProvider {
 
             return response.getBody();
         } catch (Exception e) {
-            System.out.println("Oops, got an error retreiving from server.. + e");
+            System.out.println("Oops, got an error retrieving from server.. + e");
         }
          return null;
     }
@@ -37,7 +36,6 @@ public class RestDataProvider implements DataProvider {
             final String url = "http://roosearchdev.jameselsey.cloudbees.net/api/survey/{query}";
 
             HttpHeaders requestHeaders = new HttpHeaders();
-            requestHeaders.setAcceptEncoding(ContentCodingType.GZIP);
 
             // Create a new RestTemplate instance
             RestTemplate restTemplate = new RestTemplate();
@@ -49,7 +47,7 @@ public class RestDataProvider implements DataProvider {
 
             return response.getBody();
         } catch (Exception e) {
-            System.out.println("Oops, got an error retreiving from server.. + e");
+            System.out.println("Oops, got an error retrieving from server.. + e");
         }
         return null;
     }
@@ -64,18 +62,17 @@ public class RestDataProvider implements DataProvider {
             final String url = "http://roosearchdev.jameselsey.cloudbees.net/api/survey";
 
             HttpHeaders requestHeaders = new HttpHeaders();
-            requestHeaders.setAcceptEncoding(ContentCodingType.GZIP);
             requestHeaders.setContentType(new MediaType("application","json"));
 
             // Create a new RestTemplate instance
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
 
-            response = restTemplate.postForObject(url, dto, String.class);
+            restTemplate.postForObject(url, dto, String.class);
 
 
         } catch (Exception e) {
-            System.out.println("Oops, got an error retreiving from server.. + e");
+            System.out.println("Oops, got an error retrieving from server.. + e");
         }
     }
 }
